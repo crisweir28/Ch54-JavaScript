@@ -27,3 +27,10 @@ function setUp(){
 }
 
 setUp();
+
+function cambiarNombre() {
+            let newName = prompt("¿Cuál es tu nombre?");
+            if (newName) {
+                document.getElementById("name").textContent = "Hola " + newName;
+            }
+}
