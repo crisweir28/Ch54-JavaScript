@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function mostrarAlerta() {
+            alert("¡Hola, mundo!");
+        }
+        function cambiarColorFondo() {
+            document.body.style.backgroundColor = "red";
+        }
+        function cambiarTexto() {
+            document.body.innerHTML = "<h1>¡Texto cambiado!</h1>";
+        }
+    </script>
+            <h1>Ejercicios de POO y Scripts</h1>
+    <button onclick="mostrarAlerta()">Ejemplo de Script en alerta</button>
+    <button onclick="cambiarColorFondo()">Pulsame par cambiar de color el fondo</button>
+    <button onclick="cambiarTexto()">Pulsame para cambiar el texto</button>
+
+    <!-- Agregar un nuevo tag Script y agregar una función que cambie el background de body
+         a otro color ej. blue.
+         Agregar un botón que llame a esa función para cambiar el color de fondo 
+    -->
+         <script>
+            function bodycolor (){
+                document.body.style.backgroundColor = "#6600FF" ;
+            }
+         </script>
+
+         <button onclick="bodycolor()">Cambia de color el fondo</button>
+
+</script>
+</body>
+</html>
