@@ -15,7 +15,7 @@ Resultado esperado:
 
 
 function calcularEdad() {
-    const edad = parseInt(document.getElementById("birthday").value);
+    const edad = parseInt(document.getElementById("birthdate").value);
     const meses = edad * 12;
     document.getElementById("result").textContent = "Tu edad en mese es: "+meses;
       
