@@ -45,9 +45,12 @@ o funciones se eleven al comienzo de su ámbito antes de que se ejecute el códi
 
 */
 
+function saludar( nombre){
+  console.log("¿Qué musica te gusta? " +nombre);
+}
 
-
-
+saludar("Cris");//este puede ir arriba o abajo, 
+// el programa correra normal
 
 /*
  ------------ Funciones expresadas -----------------------
@@ -58,13 +61,42 @@ Las funciones expresadas no tiene hoisting, porque no se
 carga en memoria hasta que se utilice.
 
 sintaxis:
-    const nombreVariable = function nombreFuncion (parámetros){
-        instrucciones;
-    };
+    
+const nombreVariable = function nombreFuncion (parámetros){
+  instrucciones;
+};*/
+
+
+const song = function (nombre, cancion){
+  console.log(`Que buen gusto ${nombre}, a mi tambien me gusta el ${cancion}`);
+};
+
+song("cris","pop");//debe ir forzozamente abajo, 
+// porque si nono puede leer el programa
+
+
+
+/*
+ Realizar una función declarada que sume dos números 
+ y retorne el resultado.
+ 
+ Realizar una función expresada que reste dos números 
+ y retorne el resultado.
+ 
 */
 
+suma (4,5);
+//función declarada
+function suma(a,b){
+  return console.log(`el resultado de ${a} + ${b} es = ${a + b}`);
+}
 
+//función expresada
+ const resta = function (x,y){
+  return console.log(`el resultado de ${x} - ${y} es = ${x - y}`);
+}
 
+resta(10,3);
 
 
 /*
