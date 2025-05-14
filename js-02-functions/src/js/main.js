@@ -109,6 +109,11 @@ sintaxis:
 
 */
 
+(function setUp(data){
+  console.log("configuracion inicial de la app");
+  console.log("valor de data "+data);
+})(18);
+
 
 
 
@@ -130,12 +135,36 @@ sintaxis:
     }
 */
 
+//realizar una función declarada que calcule el área de un triángulo
+//la función debe retornar el resultado
+
+//realizar una función declarada que calcule el área de un triángulo
+//la función debe retornar el resultado
 
 
+//función declarada
+function area(a, b) {
+  return (a * b) / 2;
+}
+area(20,10);
+console.log(`resultado en funcion declarada es: ${area(5, 10)}`);
 
+//función expresada
+const areaTr = function (altura,base){
+  return (base * altura) / 2;
+}
+console.log(`resultado en funcion expresada es: ${areaTr(10,3)}`);
 
+//función flecha
+const area3 = (base, altura) => (base * altura)/2;
+console.log(`resultado usando funcion flecha: ${area3(12,30)}`);
 
-
+//funcion que calcule el area de un circulo y el resultado se imprima en un parrafo
+/*
+const circleArea = (radio) => Math.PI * radio ** 2;
+const imprimirAreaCirculo = (radio) => document.getElementById("area-circulo").innerText = circleArea(radio);
+imprimirAreaCirculo(5);
+*/
 /*
  ------------ Parámetros por defecto -----------------------
              (default parameters)
@@ -143,8 +172,15 @@ Inicializa un parámetro de la función, si no se envía el argumento cuando se 
 
 */
 
+const saludarPersona = (nombre) => console.log(`hola ${nombre}, escuchemos lady gaga`);
+saludarPersona();
 
-
+console.log(parseInt("5"));
+console.log(parseInt("1000"));
+console.log(parseInt("1000",10));
+console.log(parseInt("1000",2));
+console.log(parseInt("D2042D"));
+console.log(parseInt("D2042D",16));
 
 
 /*
@@ -154,7 +190,64 @@ Inicializa un parámetro de la función, si no se envía el argumento cuando se 
  Se pasa en el argumento como referencia ( sin parentesis).
  */
 
+ const imprimirMensaje = ( fncCallBack ) => fncCallBack("Hola Ch54");
+                                            // 18("Hola Ch54");
+                                            // "patito"("Hola Ch54");
+                                            // console.log("Hola Ch54");
+                                            // undefined("Hola Ch54");
+ // imprimirMensaje( 18 ); // fncCallBack is not a function
+ // imprimirMensaje( "Patito" ); // fncCallBack is not a function
+ imprimirMensaje( console.log ); // "Hola Ch54"
+ // imprimirMensaje( console.log("Luis") ); //  fncCallBack is not a function
+ // imprimirMensaje( undefined ); //  fncCallBack is not a function
 
+ const enviarAParrafo = (mensaje) => {
+  const saludar = "hola, buen dia";
+  const referencia = document.getElementById("saludo-callback");
+  referencia.innerHTML = `${saludar} ${mensaje}`;
+ };
+ // usando la función imprimirMensaje, enviar un callback para que imprima con alert
+ imprimirMensaje(enviarAParrafo);
+ //imprimirMensaje(alert);
 
+/*
+  Realizar una función que sume dos numeros y que imprima
+  el resultado.
+   - inicialmente se imprimirá en la consola
+   - es posible que se te pida imprimir en el dom
+   - es posible que se te pida imprimir en un alert
+*/
 
-  
+const sumarDosNumeros = ( a, b) => a  + b;
+
+/*
+const sumarEImprimir = ( a, b , opcion = "consola") => {
+   const resultado = sumarDosNumeros(a, b);
+   const mensaje = `La suma de ${a} + ${b} es: ${resultado}`;
+    //imprimir en consola
+   if( opcion === "consola") console.log(mensaje);
+   else if (opcion === "parrafo") document.getElementById("resultado-sumatoria").innerText = mensaje;
+   else if (opcion === "h2")document.getElementById("resultadoH2-sumatoria").innerText = mensaje;
+   else alert(mensaje)
+}
+sumarEImprimir(10,14);//se imprimer en cosola
+sumarEImprimir(50,50, "parrafo");//se imprimer en el parrafo
+*/
+
+const sumarEImprimir = ( a, b , imprimir = console.log) => {
+   const resultado = sumarDosNumeros(a, b);
+   const mensaje = `La suma de ${a} + ${b} es: ${resultado}`;
+   imprimir(mensaje)
+}
+sumarEImprimir( 10, 14); // se imprimr en consola 
+const imprimirEnDOMParagraph = (mensaje) =>{
+  const refParagraph = document.getElementById("resultado-sumatoria");
+  refParagraph.innerText = mensaje;
+}
+const imprimirEnDOMH2 = (mensaje) =>{
+  const refParagraph = document.getElementById("resultadoH2-sumatoria");
+  refParagraph.innerText = mensaje;
+}
+sumarEImprimir( 10, 14, imprimirEnDOMParagraph); // se imprime en paragraph
+sumarEImprimir( 10, 14, imprimirEnDOMH2); // se imprime en h2
+sumarEImprimir( 10, 14, alert);
