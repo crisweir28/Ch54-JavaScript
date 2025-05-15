@@ -72,13 +72,42 @@ console.log(verificarEdad(15)); // "No eres menor de edad"
  Si es menor a 18 el mensaje "Tu luchador es Penta"
 */
 
-const verificarEdad2 = edad2 =>{
-    if(edad2 >= 18 && edad2 <= 30) return ` Tienes ${edad2}, Tu luchador es Místico`;
-    return `Tienes ${edad2}, Tu luchador es el perro Aguayo`;
-}
-const resultado2 = verificarEdad2(31);
+const verificarEdad = (edad) =>{
+    if (edad >= 18 && edad <= 30) return `Tienes ${edad}, tu luchador es místico`;
+    else if (edad >= 31) return `Tienes ${edad}, tu luchador es el perro guayo`;
+    else return `Tienes ${edad}, eres un alien`;
+};
+console.log(verificarEdad(-45));
 
-console.log(resultado2); 
+
+
+{
+    let myVarLet = 30;
+    const myVarConst = 40;
+    var myVarVar = 50;
+    console.log(myVarLet, myVarConst, myVarVar)
+    {
+        let myVarLet = 100;
+        const myVarConst = 110;
+        var myVarVar = 120;
+        console.log(myVarLet, myVarConst, myVarVar);
+    }
+    console.log(myVarLet, myVarConst, myVarVar)
+}
+/*
+let active = false
+if(active === true);{
+    console.log("esta activo");
+}
+console.log("fin del programa");
+
+*/
+/*let active = false;
+if(active === true)
+    console.log("estas activo");
+    console.log("tienes autorizacion");
+console.log("fin del prgorama");
+*/
 
 
 //--------------- Condicional Switch --------------------------
@@ -108,9 +137,35 @@ console.log(resultado2);
   }
 
 */
+/*
+const evaluarNombre =(nombre) =>{
+    let resultado;
+    switch(nombre){
+        case "Lua":
+            resultado = "Es de Abril";
+            break;
+        case "Milo":
+            resultado = "Es de Carlos";
+            break;
+        case "Cuchara":
+            resultado = "Es de Ricardo";
+            break;
+        case "Odie":
+        case "Gorda":
+        case "Chato":
+            resultado = "Es de Cris";
+            break;
+        default:
+            resultado = "No se sabe de quien es";
+    }
+    return resultado;
+}
 
+console.log(evaluarNombre("Lua"));
+console.log(evaluarNombre("Milo"));
+console.log(evaluarNombre("Chato"));
 
-
+*/
 
 /**
  * Función que reciba la velocidad de un ventilador y devuelva el mensaje
@@ -122,9 +177,55 @@ console.log(resultado2);
  * Cualquier otro valor: Velocidad desconocida
  * @param {number} velocidad
  * @returns {string} mensaje
+ * Realizar dos versiones, una versión con switch y otra con if-else
  */
 
 
+/*
+const ventilador = (velocidad) =>{
+    let resultado;
+    switch(velocidad){
+        case 0:
+            resultado = "Apagado";
+            break;
+        case 1:
+            resultado = "Baja";
+            break;
+        case 2:
+            resultado = "Media";
+            break;
+        case 3:
+            resultado = "Alta";
+            break;
+        default:
+            resultado = "Conecta el ventilador";
+    }
+    return resultado;
+}
+
+console.log(ventilador(1));*/
+
+const ventilador2 = (velocidad2) => {
+    let resultado2;
+    if (velocidad2 === 0){
+        resultado2 = "apagado";
+    }
+    else if(velocidad2 === 1){
+        resultado2 = "baja";
+    }
+    else if(velocidad2 === 2){
+        resultado2 = "media";
+    }
+    else if(velocidad2 === 3){
+        resultado2 = "alta";
+    }
+    return resultado2; 
+}
+
+console.log(ventilador2(2)); 
+
+
+    
 
 
 // ------------------------ Operador ternario --------------------------
