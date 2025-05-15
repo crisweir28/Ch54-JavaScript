@@ -42,7 +42,43 @@
 
 */
 
+/*
+Crear un arrow function que reciba el valor de edad
+si la edad es mayor o igual a 18, la funcion debe 
+retornar el mensaje "eres mayor de dedad", 
+en caso contrario retornar "no eres menor de edad" 
 
+-realizar la version de if-else sin usar el bloque de codigo {}
+*/
+
+/*
+const verificarEdad = edad => {
+    if (edad >= 18) return console.log(` Tienes ${edad} Eres mayor de edad`);
+    return console.log(`Tienes ${edad} No eres menor de edad`);
+};
+
+const resultado = verificarEdad(19)
+console.log(resultado); // "Eres mayor de edad"
+console.log(verificarEdad(15)); // "No eres menor de edad"
+*/
+
+
+/*
+ Crear un arrow function que reciba el valor de edad.
+ Si la edad es mayor o igual a 18 y menor o igual a 30
+                 ( evalur con 18 Y(&&) evaluar con 30        )
+ la función debe retornar el mensaje "Tu luchador es Místico".
+ Si es mayor o igual a 31 el mensaje "Tu luchador es el perro Aguayo".
+ Si es menor a 18 el mensaje "Tu luchador es Penta"
+*/
+
+const verificarEdad2 = edad2 =>{
+    if(edad2 >= 18 && edad2 <= 30) return ` Tienes ${edad2}, Tu luchador es Místico`;
+    return `Tienes ${edad2}, Tu luchador es el perro Aguayo`;
+}
+const resultado2 = verificarEdad2(31);
+
+console.log(resultado2); 
 
 
 //--------------- Condicional Switch --------------------------
